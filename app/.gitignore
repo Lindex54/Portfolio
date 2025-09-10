@@ -1,0 +1,23 @@
+# Ignore Hack source files
+*.hh
+*.hhi
+*.php
+
+# Ignore compiled or temporary files
+.hhvm/
+.hack/
+.hackconfig
+.hhconfig
+/tmp/
+*.swp
+*.bak
+*.log
+
+# Node.js (if used in the project)
+node_modules/
+
+# IDE or editor specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

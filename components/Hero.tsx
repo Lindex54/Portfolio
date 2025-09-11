@@ -1,7 +1,9 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
-import { TextGenerateEffect } from "./TextGenerateEffects";
+import { TextGenerateEffect } from "./ui/TextGenerateEffects";
+import MagicButton from "./ui/MagicButton";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -46,7 +48,10 @@ const Hero = () => {
         />
       </div>
       <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-2xl:">
+        <div
+          className="max-w-[89vw] md:max-2xl lg:man-w-[60vw] 
+        flex flex-col items-center justify-center"
+        >
           <h2
             className="uppercase tracking-widest text-xs
             text-center text-blue-100 max-w-80"
@@ -55,8 +60,21 @@ const Hero = () => {
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
-            words="Transforming Concepts into Seamless Experiences"
+            words="Transforming Concepts into Seamless User Experiences"
           />
+          <p
+            className="text-center md:tracking-wider
+          mb-4 text-sm md:text-lg lg:text-2xl"
+          >
+            Hi. I&apos;m Malinde, a FullStack Developer based in Uganda
+          </p>
+          <a href="#about">
+            <MagicButton
+              title="Show my work"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </a>
         </div>
       </div>
     </div>

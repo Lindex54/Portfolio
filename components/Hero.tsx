@@ -73,6 +73,10 @@ const Hero = () => {
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
+              handleclick={function (): void {
+                throw new Error("Function not implemented.");
+              }}
+              otherClassess={""}
             />
           </a>
         </div>

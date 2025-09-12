@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { BackgroundGradientAnimation } from "./GradientBg";
 
 export const BentoGrid = ({
   className,
@@ -50,16 +51,52 @@ export const BentoGridItem = ({
         className
       )}
       style={{
-        background: "rgb(4,7,29",
-        backgroundColor: "gradient....",
+        background: "rgb(4,7,29)",
+        backgroundColor:
+          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%",
       }}
     >
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {title}
+      <div className={`${id === 6} && 'flex justify-center h-full'`}>
+        <div className="h-full w-full absolute">
+          {img && (
+            <img
+              src={img}
+              alt={img}
+              className={cn(imgClassName, "object-cover, object-center")}
+            />
+          )}
         </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-          {description}
+        <div
+          className={`absolute right-0 -bottom-5 ${
+            id === 5 && "w-full opacity-80"
+          }`}
+        >
+          {spareImg && (
+            <img
+              src={spareImg}
+              alt={spareImg}
+              className={"object-cover object-center w-full h-full"}
+            />
+          )}
+        </div>
+        {id === 6 && (
+          <BackgroundGradientAnimation>
+            <div className="absolute z-50 flex items-center justify-center font-bold text-white" />
+          </BackgroundGradientAnimation>
+        )}
+
+        <div
+          className={cn(
+            titleClassName,
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+          )}
+        >
+          <div className="font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base">
+            {description}
+          </div>
+          <div className="lg:text-3xl max-w-96 font-sans font-bold text-lg">
+            {title}
+          </div>
         </div>
       </div>
     </div>

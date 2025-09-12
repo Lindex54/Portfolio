@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
+import { GlobeDemo } from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -47,7 +48,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 flex flex-col relative justify-between space-y-4 rounded-3xl border bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "group/bento shadow-input overflow-hidden row-span-1 flex flex-col relative justify-between space-y-4 rounded-3xl border bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
         className
       )}
       style={{
@@ -98,6 +99,18 @@ export const BentoGridItem = ({
             {title}
           </div>
         </div>
+
+        {id === 2 && <GlobeDemo />}
+
+        {id === 3 && (
+          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+            <div className="flex flex-col, gap-3 lg:gap-8">
+              {["React.js", "Next.js", "TypeScript"].map((item) => (
+                <span></span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

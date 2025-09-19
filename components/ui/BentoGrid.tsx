@@ -98,26 +98,57 @@ export const BentoGridItem = ({
           <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-20 relative">
             {title}
           </div>
-        </div>
 
-        {id === 2 && (
-          <div className="absolute inset-0 z-10">
-            <GlobeDemo />
-          </div>
-        )}
+          {id === 2 && <GlobeDemo />}
 
-        {id === 3 && (
-          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-            <div className="flex flex-col, gap-3 lg:gap-8">
-              {["React.js", "Next.js", "TypeScript"].map((item) => (
+          {id === 3 && (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+              <div className="flex flex-col gap-3">
+                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-80 rounded-md text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
+              </div>
+              <div className="flex flex-col gap-3">
+                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-80 rounded-md text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {/* {id === 3 && (
+            <div className="absolute right-2 bottom-2 grid grid-cols-2 gap-x-4 gap-y-2">
+              {[
+                "React.js",
+                "Next.js",
+                "TypeScript",
+                "Tailwind",
+                "Node.js",
+                "Prisma",
+                "MongoDB",
+                "Express",
+              ].map((item) => (
                 <span
                   key={item}
-                  className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                ></span>
+                  className="px-2 py-1 text-[10px] lg:text-sm opacity-70 lg:opacity-100 rounded-md text-center bg-[#10132E] whitespace-nowrap"
+                >
+                  {item}
+                </span>
               ))}
             </div>
-          </div>
-        )}
+          )} */}
+        </div>
       </div>
     </div>
   );

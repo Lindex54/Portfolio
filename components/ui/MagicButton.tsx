@@ -4,17 +4,18 @@ const MagicButton = ({
   title,
   icon,
   position,
-  handleclick,
-  otherClassess,
+  handleClick,
+  otherClasses,
 }: {
   title: string;
   icon: React.ReactNode;
   position: string;
-  handleclick: () => void;
-  otherClassess: string;
+  handleClick?: () => void;
+  otherClasses?: string;
 }) => {
   return (
     <button
+      onClick={handleClick}
       className="relative inline-flex w-full rounded-lg h-12 
     overflow-hidden  
     p-[1px] focus:outline-none md:w-60 md:mt-10"
@@ -27,7 +28,7 @@ const MagicButton = ({
       <span
         className={`inline-flex h-full w-full cursor-pointer items-center justify-center 
     rounded-lg bg-slate-950 px-7 text-sm font-medium
-    text-white backdrop-blur-3xl gap-2 ${otherClassess}`}
+    text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
       >
         {position === "left" && icon}
         {title}

@@ -51,6 +51,14 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false);
 
+  const handlecopy = (text: string) => {
+    navigator.clipboard.writeText("malindegodwin9@gmail.com");
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+
   return (
     <div
       className={cn(
@@ -143,6 +151,8 @@ export const BentoGridItem = ({
                     autoplay: copied,
                     animationData,
                   }}
+                  height={100}
+                  width={100}
                 />
               </div>
             </div>

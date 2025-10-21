@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adrian's Portoflio",
+  title: "Malinde's Portoflio",
   description: "ABout Me",
 };
 

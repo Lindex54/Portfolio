@@ -48,3 +48,6 @@ next-env.d.ts
 .hack/
 .hhconfig
 .hackconfig
+
+# Sentry Config File
+.env.sentry-build-plugin

@@ -73,7 +73,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 w-screen overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -100,17 +100,22 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-lg leading-[1.6] font-normal text-white">
+              <span className="relative z-20 text-sm md:text-lg leading-[1.6] font-normal text-white">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.title}
-                  </span>
+                  <div className="me-3">
+                    <img src="/profile.svg" alt="profile" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xl leading-[1.6] font-bold text-white">
+                      {item.name}
+                    </span>
+                    <span className="text-sm leading-[1.6] font-normal text-white-200">
+                      {item.title}
+                    </span>
+                  </div>
                 </span>
               </div>
             </blockquote>

@@ -11,31 +11,49 @@ import {FaLocationArrow} from "react-icons/fa";
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [sent, setSent] = useState(false);
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [message, setMessage] = useState("");
 
-    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
-        const form = e.target as HTMLFormElement;
-
-        emailjs
-            .sendForm(
+        try {
+            await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-                form,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            )
-            .then(
-                () => {
-                    setSent(true);
-                    setLoading(false);
-                    form.reset();
+                {
+                    from_name: name,
+                    from_email: email,
+                    to_name: "Godwin Malinde",
+                    message: message,
                 },
-                (error) => {
-                    console.log("FAILED...", error);
-                    setLoading(false);
-                }
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
+
+            setLoading(false);
+            setSent(true);
+
+            // Reset form fields
+            setName("");
+            setEmail("");
+            setMessage("");
+
+            // Hide success message after 4 seconds
+            setTimeout(() => setSent(false), 4000);
+        } catch (error: unknown) {
+            setLoading(false);
+
+
+            if (error instanceof Error) {
+                console.error("EmailJS error:", error.message);
+                alert("Failed to send message: " + error.message);
+            } else {
+                console.error("Unexpected error:", error);
+                alert("Failed to send message. Please try again later.");
+            }
+        }
     };
 
     return (
@@ -52,10 +70,11 @@ export default function ContactForm() {
                 <LabelInputContainer>
                     <Label htmlFor="name">Your Name</Label>
                     <Input
-                        id="name"
-                        name="user_name"
+                        name="name"
                         type="text"
                         placeholder="Godwin JeyR"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required
                     />
                 </LabelInputContainer>
@@ -63,10 +82,11 @@ export default function ContactForm() {
                 <LabelInputContainer>
                     <Label htmlFor="email">Your Email</Label>
                     <Input
-                        id="email"
-                        name="user_email"
+                        name="email"
                         type="email"
+                        value={email}
                         placeholder="you@example.com"
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </LabelInputContainer>
@@ -74,11 +94,12 @@ export default function ContactForm() {
                 <LabelInputContainer>
                     <Label htmlFor="message">Message</Label>
                     <textarea
-                        id="message"
                         name="message"
+                        value={message}
                         rows={5}
                         className="w-full rounded-md border border-neutral-700 bg-black-100 p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         placeholder="Tell me about your project..."
+                        onChange={(e) => setMessage(e.target.value)}
                         required
                     />
                 </LabelInputContainer>
@@ -99,7 +120,8 @@ export default function ContactForm() {
                         icon={<FaLocationArrow />}
                         position="right"
                         otherClasses="w-full"
-                        handleClick={() => {}}
+                        type="submit"
+                        disabled={loading}
                     />
                 </div>
 

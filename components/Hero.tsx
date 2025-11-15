@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
@@ -73,10 +75,10 @@ const Hero = () => {
               title="Show my work"
               icon={<FaLocationArrow />}
               position="right"
-              handleclick={function (): void {
+              handleClick={function (): void {
                 throw new Error("Function not implemented.");
               }}
-              otherClassess={""}
+              otherClasses={""}
             />
           </a>
         </div>

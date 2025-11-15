@@ -5,6 +5,8 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
+import MagicButton from "@/components/ui/MagicButton";
+import {FaLocationArrow} from "react-icons/fa";
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
@@ -37,7 +39,8 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="mx-auto w-full max-w-lg rounded-2xl bg-[#0d0f1a] p-8 shadow-xl">
+        <div className="w-full max-w-xl p-6 rounded-2xl border
+                    saturate-180 bg-opacity bg-black-200 border-purple/40 shadow-[0_8px_20px_rgba(0,0,0,0.15)] backdrop-blur">
             <h2 className="text-3xl font-bold text-white text-center">
                 Let’s Get In Touch
             </h2>
@@ -52,7 +55,7 @@ export default function ContactForm() {
                         id="name"
                         name="user_name"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Godwin JeyR"
                         required
                     />
                 </LabelInputContainer>
@@ -74,20 +77,33 @@ export default function ContactForm() {
                         id="message"
                         name="message"
                         rows={5}
-                        className="w-full rounded-md border border-neutral-700 bg-black p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full rounded-md border border-neutral-700 bg-black-100 p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         placeholder="Tell me about your project..."
                         required
                     />
                 </LabelInputContainer>
 
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="group relative w-full h-11 rounded-md bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-semibold shadow-lg disabled:opacity-60"
-                >
-                    {loading ? "Sending..." : "Send Message"}
-                    <BottomGradient />
-                </button>
+                {/*<button*/}
+                {/*    type="submit"*/}
+                {/*    disabled={loading}*/}
+                {/*    className="group relative w-full h-11 rounded-md bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-semibold shadow-lg disabled:opacity-60"*/}
+                {/*>*/}
+                {/*    {loading ? "Sending..." : "Send Message"}*/}
+                {/*    <BottomGradient />*/}
+                {/*</button>*/}
+
+                {/* MagicButton as submit */}
+                <div className="mt-2 flex justify-center w-full">
+                    <MagicButton
+                        title={loading ? "Sending..." : "Send Message"}
+                        icon={<FaLocationArrow />}
+                        position="right"
+                        otherClasses="w-full"
+                        handleClick={() => {}}
+                    />
+                </div>
+
+
 
                 {sent && (
                     <p className="text-center text-green-400 mt-2">

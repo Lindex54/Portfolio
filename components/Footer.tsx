@@ -2,10 +2,11 @@ import React from "react";
 import MagicButton from "@/components/ui/MagicButton";
 import {FaLocationArrow} from "react-icons/fa";
 import {socialMedia} from "@/data";
+import ContactForm from "@/components/ui/ContactForm";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-20 pb-10" id="contact">
+    <footer className="w-full pb-10 mb-[70px]" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
@@ -15,9 +16,7 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-          <a href="malindegodwin9@gmail.com">
-              <MagicButton title="Let's get in touch" icon={<FaLocationArrow/>} position="right" />
-          </a>
+         <ContactForm />
       </div>
 
         <div className="flex mt-16 md:flex-row flex-col justify-between items-center" >

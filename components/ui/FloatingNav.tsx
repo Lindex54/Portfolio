@@ -69,7 +69,7 @@ export const FloatingNav = ({
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
+            <span className="!cursor-pointer text-sm">{navItem.name}</span>
           </a>
         ))}
       </motion.div>

@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Malinde's Portoflio",
   description: "ABout Me",
+    icons:{
+      icon: "/malinde.svg"
+    }
+
 };
 
 export default function RootLayout({

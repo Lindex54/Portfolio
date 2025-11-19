@@ -54,13 +54,13 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText("malindegodwin9@gmail.com");
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  };
+  // const handleCopy = () => {
+  //   navigator.clipboard.writeText("malindegodwin9@gmail.com");
+  //   setCopied(true);
+  //   setTimeout(() => {
+  //     setCopied(false);
+  //   }, 2000);
+  // };
 
   return (
     <div
@@ -134,7 +134,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
-                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                {["Python", "PHP", "JavaScript"].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-80 rounded-md text-center bg-[#10132E]"
@@ -161,17 +161,8 @@ export const BentoGridItem = ({
                   width={100}
                 />
               </div>
-                <div className="flex flex-col gap-2">
-                    <a href="" target="_blank">
-                        <MagicButton
-                            title="View My CV"
-                            icon={<IoEyeOutline />}
-                            position="left"
-                            otherClasses="!bg-[#161a31]"
-                        />
-                    </a>
-
-                    <a href="" download>
+                <div className="flex flex-col justify-center gap-2">
+                    <a href="/MALINDE_GODWIN_CV.pdf" download>
                         <MagicButton
                             title="Download My CV"
                             icon={<IoDownloadOutline />}

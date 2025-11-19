@@ -8,6 +8,7 @@ import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
+import {IoEyeOutline, IoDownloadOutline} from "react-icons/io5";
 
 export const BentoGrid = ({
   className,
@@ -160,13 +161,26 @@ export const BentoGridItem = ({
                   width={100}
                 />
               </div>
-              <MagicButton
-                title={copied ? "Email copied!" : "Copy my email"}
-                icon={<IoCopyOutline />}
-                position="left"
-                otherClasses="!bg-[#161a31]"
-                handleClick={handleCopy}
-              />
+                <div className="flex flex-col gap-2">
+                    <a href="" target="_blank">
+                        <MagicButton
+                            title="View My CV"
+                            icon={<IoEyeOutline />}
+                            position="left"
+                            otherClasses="!bg-[#161a31]"
+                        />
+                    </a>
+
+                    <a href="" download>
+                        <MagicButton
+                            title="Download My CV"
+                            icon={<IoDownloadOutline />}
+                            position="left"
+                            otherClasses="!bg-[#161a31]"
+                        />
+                    </a>
+                </div>
+
             </div>
           )}
           {/* {id === 3 && (

@@ -76,7 +76,7 @@ export const projects = [
     des: "Explore my recent web development projects, showcasing interactive, responsive, and user-friendly websites built with modern web technologies.",
     img: "/p1.svg",
     // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://github.com/Lindex54/Portfolio.git",
   },
   {
     id: 2,

@@ -74,7 +74,7 @@ export const projects = [
     id: 1,
     title: "My Portfolio",
     des: "Explore my recent web development projects, showcasing interactive, responsive, and user-friendly websites built with modern web technologies.",
-    img: "/p11.svg",
+    img: "/p1.svg",
     // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://github.com/adrianhajdin?tab=repositories",
   },
@@ -88,11 +88,11 @@ export const projects = [
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
+    title: "AI Resume Analyzer - Puter.js",
+    des: "An AI-powered tool that compares your résumé to a job description and gives clear, personalized suggestions to boost relevance, add missing keywords, and improve ATS performance.",
+    img: "/p33.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    link: "https://github.com/Lindex54/AI_Resume_Analyzer.git",
   },
   {
     id: 4,
@@ -205,11 +205,12 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+      link: "https://github.com/Lindex54",
   },
-  {
-    id: 2,
-    img: "/twit.svg",
-  },
+  // {
+  //   id: 2,
+  //   // img: "/twit.svg",
+  // },
   {
     id: 3,
     img: "/link.svg",

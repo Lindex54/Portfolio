@@ -68,7 +68,7 @@ const Hero = () => {
             className="text-center md:tracking-wider
           mb-4 text-sm md:text-lg lg:text-2xl"
           >
-            Hi. I&apos;m Malinde, a FullStack Developer based in Uganda
+            Hi. I&apos;m Malinde, a Software Developer based in Uganda
           </p>
           <a href="#about">
             <MagicButton

@@ -162,7 +162,7 @@ export const BentoGridItem = ({
                 />
               </div>
                 <div className="flex flex-col justify-center gap-2">
-                    <a href="/MALINDE_GODWIN_CV.pdf" download>
+                    <a href="/GODWIN_MALINDE_CV.pdf" download>
                         <MagicButton
                             title="Download My CV"
                             icon={<IoDownloadOutline />}

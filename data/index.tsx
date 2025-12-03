@@ -205,7 +205,7 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-      link: "https://github.com/Lindex54",
+    link: "https://github.com/Lindex54",
   },
   // {
   //   id: 2,
@@ -214,5 +214,6 @@ export const socialMedia = [
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/godwin-malinde-18183b270/"
   },
 ];
